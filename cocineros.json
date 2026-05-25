@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "Carlos Martínez",
+        "especialidad": "Cocina Mediterránea",
+        "experiencia": 12
+    },
+    {
+        "nombre": "Laura Gómez",
+        "especialidad": "Repostería",
+        "experiencia": 8
+    },
+    {
+        "nombre": "Andrés Ruiz",
+        "especialidad": "Cocina Asiática",
+        "experiencia": 15
+    },
+    {
+        "nombre": "Marta Fernández",
+        "especialidad": "Cocina Vegetariana",
+        "experiencia": 6
+    },
+    {
+        "nombre": "María Fernández",
+        "especialidad": "Comida Italiana",
+        "experiencia": 3
+    }
+]

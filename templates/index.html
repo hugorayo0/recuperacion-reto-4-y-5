@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<h2>Listado de cocineros</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Especialidad</th>
+            <th>Experiencia</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cocinero in cocineros %}
+        <tr>
+            <td>{{ cocinero.nombre }}</td>
+            <td>{{ cocinero.especialidad }}</td>
+            <td>{{ cocinero.experiencia }} años</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('nuevo_cocinero') }}" class="btn">Añadir cocinero</a>
+
+{% endblock %}
