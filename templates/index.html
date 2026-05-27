@@ -1,12 +1,15 @@
 {% extends "base.html" %}
-
 {% block contenido %}
 
-<h2>Listado de cocineros</h2>
+<div class="page-header">
+    <h2>👨‍🍳 Listado de cocineros</h2>
+    <a href="{{ url_for('nuevo_cocinero') }}" class="btn">+ Añadir cocinero</a>
+</div>
 
 <table>
     <thead>
         <tr>
+            <th>#</th>
             <th>Nombre</th>
             <th>Especialidad</th>
             <th>Experiencia</th>
@@ -15,14 +18,17 @@
     <tbody>
         {% for cocinero in cocineros %}
         <tr>
-            <td>{{ cocinero.nombre }}</td>
-            <td>{{ cocinero.especialidad }}</td>
-            <td>{{ cocinero.experiencia }} años</td>
+            <td class="row-num">{{ loop.index }}</td>
+            <td><strong>{{ cocinero.nombre }}</strong></td>
+            <td><span class="tag">{{ cocinero.especialidad }}</span></td>
+            <td>{{ cocinero.experiencia }} año{{ 's' if cocinero.experiencia != 1 }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4" class="empty-msg">No hay cocineros registrados todavía.</td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-
-<a href="{{ url_for('nuevo_cocinero') }}" class="btn">Añadir cocinero</a>
 
 {% endblock %}
