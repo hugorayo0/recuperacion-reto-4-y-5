@@ -45,7 +45,7 @@ def nuevo_cocinero():
 
     return render_template("nuevo.html")
 
-# Eliminar un cocinero por su índice
+# Eliminar cocinero
 @app.route("/eliminar/<int:id>", methods=["POST"])
 def eliminar_cocinero(id):
     cocineros = leer_cocineros()
