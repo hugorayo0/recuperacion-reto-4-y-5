@@ -2,7 +2,7 @@
 {% block contenido %}
 
 <div class="page-header">
-    <h2>👨‍🍳 Listado de cocineros</h2>
+    <h2>Listado de cocineros</h2>
     <a href="{{ url_for('nuevo_cocinero') }}" class="btn">+ Añadir cocinero</a>
 </div>
 
@@ -13,6 +13,7 @@
             <th>Nombre</th>
             <th>Especialidad</th>
             <th>Experiencia</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -22,10 +23,15 @@
             <td><strong>{{ cocinero.nombre }}</strong></td>
             <td><span class="tag">{{ cocinero.especialidad }}</span></td>
             <td>{{ cocinero.experiencia }} año{{ 's' if cocinero.experiencia != 1 }}</td>
+            <td>
+                <form action="{{ url_for('eliminar_cocinero', id=loop.index0) }}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar a {{ cocinero.nombre }}?');">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+            </td>
         </tr>
         {% else %}
         <tr>
-            <td colspan="4" class="empty-msg">No hay cocineros registrados todavía.</td>
+            <td colspan="5" class="empty-msg">No hay cocineros registrados todavía.</td>
         </tr>
         {% endfor %}
     </tbody>
