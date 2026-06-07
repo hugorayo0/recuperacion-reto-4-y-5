@@ -1,4 +1,4 @@
-# Restaurante Gourmet - Gestión de Cocineros
+# Restaurante Gourmet
 
 # Descripción
 
